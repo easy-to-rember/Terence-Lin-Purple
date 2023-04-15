@@ -8,7 +8,8 @@ public class Shape : MonoBehaviour
     public Rigidbody2D rb;
 
     [Header("Default Shrinking Speed")]
-    public float shrinkSpeed = 2f;
+    public float shrinkSpeed = 6f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Shape : MonoBehaviour
     {
         //local scale for this polygon is equal to shrinking multiplied by the axes sizes multiplied by game rate
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
+
         // if the local scale on the x axis is less than, or equal to, 0.05f
         if (transform.localScale.x <= .05f)
         {

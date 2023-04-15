@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     [Header("Default Spawn Delay Time")]
     public float spawnDelay = 2f;
     [Header("Default Spawn Time")]
-    public float spawnTime = 3f;
+    public float spawnTime = 1f;
     [Header("Game Over UI Object")]
     public GameObject gameOverCanvas;
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
         // create a new instance of this polygon at position
     }
 
-    public void GamerOver()
+    public void GameOver()
     {
         CancelInvoke("Spawn");
         //cancels the spawn function
