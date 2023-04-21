@@ -42,6 +42,7 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * (jumpPower * rb.mass * rb.gravityScale * 20.0f));
+            isGrounded = false; 
             //adds upward jumping force to the object multiplied by jump power, mass, and gravity
         }
     }
