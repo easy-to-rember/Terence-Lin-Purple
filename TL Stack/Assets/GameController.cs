@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 
     void NewBlock()
     {
-        ///if the last cube is not destroyed
+        //if the last cube is not destroyed
         if (lastCube != null)
         {
             //The current cube position equals to all 3 axis positions to the nearest integer
@@ -58,6 +58,8 @@ public class GameController : MonoBehaviour
         //currrent cube is equal to the spawns last cube
         currentCube.name = Level + "";
         //current cube is equal to the level's number
+        text.text = "Score:" + Level;
+
         currentCube.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.HSVToRGB((Level / 100f) % 1f, 1f, 1f));
         Level++;
         //add 1 to level
@@ -89,15 +91,16 @@ public class GameController : MonoBehaviour
         //variable pos1 equals last cube position
         var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
         //variable pos2 equals pos1 + any Level number of 2
+        var pos3 = pos1 + ((Level % 2 == 0) ? Vector3.right : Vector3.back) * 120;
         if (Level % 2 == 0)
         //if the Level number is bt the number of 2
         {
-            currentCube.transform.position = Vector3.Lerp(pos2, pos1, time);
+            currentCube.transform.position = Vector3.Lerp(pos2, pos3, time);
             //current cube's position based of the 3 axis (pos2, pos1, and time)
         }
         else
         {
-            currentCube.transform.position = Vector3.Lerp(pos1, pos2, time);
+            currentCube.transform.position = Vector3.Lerp(pos3, pos2, time);
             //current cube's position based of the 3 axis (pos1, pos2, and time)
         }
         if (Input.GetMouseButtonDown(0))
