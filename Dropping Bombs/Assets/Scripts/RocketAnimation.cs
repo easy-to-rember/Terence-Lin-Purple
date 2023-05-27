@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocketAnimation : MonoBehaviour
 {
+
     [Header("Animator")]
     public Animator animator;
     // Start is called before the first frame update
@@ -17,5 +18,10 @@ public class RocketAnimation : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("HAxis", horizontal);
+    }
+
+    void Jump(float jumpForce)
+    {
+       
     }
 }

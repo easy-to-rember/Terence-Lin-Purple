@@ -35,6 +35,7 @@ public class Spawner : MonoBehaviour
             Instantiate(bombPrefab, new Vector3(randomX, spawnY, 0), bombPrefab.transform.rotation);
             ResetDelay();
         }
+        StartCoroutine(EnemyGenerator());
     }
     void ResetDelay()
     {

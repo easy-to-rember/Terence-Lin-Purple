@@ -30,7 +30,9 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {
-        masterSpeed = speed;        
+        masterSpeed = speed;
+
+        
     }
 
 
@@ -55,6 +57,7 @@ public class Movement : MonoBehaviour
                 speed = masterSpeed;
             }
         }
+    
 
         switch (movementType)
         {
