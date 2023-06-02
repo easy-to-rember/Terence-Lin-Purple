@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        
+
 
         if (active)
         {
@@ -44,6 +44,9 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+  
+       // Vector2.Distance();
     }
+
+  
 }
