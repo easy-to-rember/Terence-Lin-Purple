@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         // assign 'spawner' variable to the component of Spawner in the "Spawner" GameObject
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        // assign "screenBounds" to the 
         player = playerPrefab;
         scoreText.enabled = false;
     }
@@ -86,10 +87,6 @@ public class GameManager : MonoBehaviour
         spawner.active = false;
         gameStarted = false;
         splash.SetActive(true);
-        
-        
-           
-
     }
 }
 
